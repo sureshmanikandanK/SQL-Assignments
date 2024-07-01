@@ -1,0 +1,551 @@
+Day - 4
+CREATE TABLE Student (
+StdID INT(4) PRIMARY KEY, StdName VARCHAR(30) NOT
+NULL, Sex VARCHAR(10), Percentage DECIMAL(5,2), SClass
+INT , Sec VARCHAR(1), Stream VARCHAR(10), DOB DATE );
+
+ Insert records into STUDENTtable. 
+INSERT INTO Student VALUES (1001,'AKSHRA AGARWAL','FEMALE',70,11,'A','Science','1996-10-11'); 
+
+
+INSERT INTO Student VALUES (1001, 'AKSHRA AGARWAL', 'FEMALE', 70, 11, 'A', 'Science', '1996-10-11');
+INSERT INTO Student VALUES (1002, 'ANJANI SHARMA', 'FEMALE', 75, 11, 'A', 'Commerce', '1996-09-18');
+INSERT INTO Student VALUES (1003, 'ANSHUL SAXENA', 'MALE', 78, 11, 'A', 'Commerce', '1996-11-19');
+INSERT INTO Student VALUES (1004, 'AISHWARYA SINGH', 'FEMALE', NULL, 11, 'A', 'Commerce', '1996-11-01');
+INSERT INTO Student VALUES (1005, 'AKRITI SAXENA', 'FEMALE', 76, 11, 'A', 'Commerce', '1996-09-20');
+INSERT INTO Student VALUES (1006, 'KHUSHI AGARWAL', 'FEMALE', NULL, 11, 'A', 'Commerce', '2003-09-14');
+INSERT INTO Student VALUES (1007, 'MAAHI AGARWAL', 'FEMALE', NULL, 11, 'A', 'Science', '1997-04-21');
+INSERT INTO Student VALUES (1008, 'MITALI GUPTA', 'FEMALE', 78, 12, 'A', 'Science', '1997-11-26');
+INSERT INTO Student VALUES (1009, 'NIKUNJ AGARWAL', 'MALE', 58, 12, 'A', 'Science', '1997-07-12');
+INSERT INTO Student VALUES (1010, 'PARKHI', 'FEMALE', 59, 12, 'A', 'Commerce', '1997-12-20');
+INSERT INTO Student VALUES (1011, 'PRAKHAR TIWARI', 'MALE', 43, 12, 'A', 'Science', '1997-04-22');
+INSERT INTO Student VALUES (1012, 'RAGHAV GANGWAR', 'MALE', 58, 12, 'A', 'Commerce', '1997-12-21');
+INSERT INTO Student VALUES (1013, 'SAHIL SARASWAT', 'MALE', 57, 12, 'A', 'Commerce', '1997-08-13');
+INSERT INTO Student VALUES (1014, 'SWATI MISHRA', 'FEMALE', NULL, 11, 'A', 'Science', '1996-08-13');
+INSERT INTO Student VALUES (1015, 'HARSH AGARWAL', 'MALE', 58, 11, 'B', 'Science', '2003-08-28');
+INSERT INTO Student VALUES (1016, 'HARSHIT KUMAR', 'MALE', 98, 11, 'B', 'Science', '2003-05-22');
+INSERT INTO Student VALUES (1017, 'JAHANVI KAPOOR', 'FEMALE', 65, 11, 'B', 'Science', '1997-01-10');
+INSERT INTO Student VALUES (1018, 'STUTI MISHRA', 'FEMALE', 66, 11, 'C', 'Commerce', '1996-01-10');
+INSERT INTO Student VALUES (1019, 'SURYANSH KUMAR AGARWAL', 'MALE', 85, 11, 'C', 'Commerce', '2007-08-22');
+INSERT INTO Student VALUES (1020, 'TANI RASTOGI', 'FEMALE', 75, 12, 'C', 'Commerce', '1998-01-15');
+INSERT INTO Student VALUES (1021, 'TANISHK GUPTA', 'MALE', 55, 12, 'C', 'Science', '1998-04-11');
+INSERT INTO Student VALUES (1022, 'TANMAY AGARWAL', 'MALE', 57, 11, 'C', 'Commerce', '1998-06-28');
+INSERT INTO Student VALUES (1023, 'YASH SAXENA', 'MALE', 79, 11, 'C', 'Science', '1998-03-13');
+INSERT INTO Student VALUES (1024, 'YESH DUBEY', 'MALE', 85, 12, 'C', 'Commerce', '1998-04-03');
+
+
+1. select * from student;
++-------+------------------------+--------+------------+--------+------+----------+------------+
+| StdID | StdName                | Sex    | Percentage | SClass | Sec  | Stream   | DOB        |
++-------+------------------------+--------+------------+--------+------+----------+------------+
+|  1001 | AKSHRA AGARWAL         | FEMALE |      70.00 |     11 | A    | Science  | 1996-10-11 |
+|  1002 | ANJANI SHARMA          | FEMALE |      75.00 |     11 | A    | Commerce | 1996-09-18 |
+|  1003 | ANSHUL SAXENA          | MALE   |      78.00 |     11 | A    | Commerce | 1996-11-19 |
+|  1004 | AISHWARYA SINGH        | FEMALE |       NULL |     11 | A    | Commerce | 1996-11-01 |
+|  1005 | AKRITI SAXENA          | FEMALE |      76.00 |     11 | A    | Commerce | 1996-09-20 |
+|  1006 | KHUSHI AGARWAL         | FEMALE |       NULL |     11 | A    | Commerce | 2003-09-14 |
+|  1007 | MAAHI AGARWAL          | FEMALE |       NULL |     11 | A    | Science  | 1997-04-21 |
+|  1008 | MITALI GUPTA           | FEMALE |      78.00 |     12 | A    | Science  | 1997-11-26 |
+|  1009 | NIKUNJ AGARWAL         | MALE   |      58.00 |     12 | A    | Science  | 1997-07-12 |
+|  1010 | PARKHI                 | FEMALE |      59.00 |     12 | A    | Commerce | 1997-12-20 |
+|  1011 | PRAKHAR TIWARI         | MALE   |      43.00 |     12 | A    | Science  | 1997-04-22 |
+|  1012 | RAGHAV GANGWAR         | MALE   |      58.00 |     12 | A    | Commerce | 1997-12-21 |
+|  1013 | SAHIL SARASWAT         | MALE   |      57.00 |     12 | A    | Commerce | 1997-08-13 |
+|  1014 | SWATI MISHRA           | FEMALE |       NULL |     11 | A    | Science  | 1996-08-13 |
+|  1015 | HARSH AGARWAL          | MALE   |      58.00 |     11 | B    | Science  | 2003-08-28 |
+|  1016 | HARSHIT KUMAR          | MALE   |      98.00 |     11 | B    | Science  | 2003-05-22 |
+|  1017 | JAHANVI KAPOOR         | FEMALE |      65.00 |     11 | B    | Science  | 1997-01-10 |
+|  1018 | STUTI MISHRA           | FEMALE |      66.00 |     11 | C    | Commerce | 1996-01-10 |
+|  1019 | SURYANSH KUMAR AGARWAL | MALE   |      85.00 |     11 | C    | Commerce | 2007-08-22 |
+|  1020 | TANI RASTOGI           | FEMALE |      75.00 |     12 | C    | Commerce | 1998-01-15 |
+|  1021 | TANISHK GUPTA          | MALE   |      55.00 |     12 | C    | Science  | 1998-04-11 |
+|  1022 | TANMAY AGARWAL         | MALE   |      57.00 |     11 | C    | Commerce | 1998-06-28 |
+|  1023 | YASH SAXENA            | MALE   |      79.00 |     11 | C    | Science  | 1998-03-13 |
+|  1024 | YESH DUBEY             | MALE   |      85.00 |     12 | C    | Commerce | 1998-04-03 |
++-------+------------------------+--------+------------+--------+------+----------+------------+
+
+2. SELECT StdName, DOB FROM student ;
++------------------------+------------+
+| StdName                | DOB        |
++------------------------+------------+
+| AKSHRA AGARWAL         | 1996-10-11 |
+| ANJANI SHARMA          | 1996-09-18 |
+| ANSHUL SAXENA          | 1996-11-19 |
+| AISHWARYA SINGH        | 1996-11-01 |
+| AKRITI SAXENA          | 1996-09-20 |
+| KHUSHI AGARWAL         | 2003-09-14 |
+| MAAHI AGARWAL          | 1997-04-21 |
+| MITALI GUPTA           | 1997-11-26 |
+| NIKUNJ AGARWAL         | 1997-07-12 |
+| PARKHI                 | 1997-12-20 |
+| PRAKHAR TIWARI         | 1997-04-22 |
+| RAGHAV GANGWAR         | 1997-12-21 |
+| SAHIL SARASWAT         | 1997-08-13 |
+| SWATI MISHRA           | 1996-08-13 |
+| HARSH AGARWAL          | 2003-08-28 |
+| HARSHIT KUMAR          | 2003-05-22 |
+| JAHANVI KAPOOR         | 1997-01-10 |
+| STUTI MISHRA           | 1996-01-10 |
+| SURYANSH KUMAR AGARWAL | 2007-08-22 |
+| TANI RASTOGI           | 1998-01-15 |
+| TANISHK GUPTA          | 1998-04-11 |
+| TANMAY AGARWAL         | 1998-06-28 |
+| YASH SAXENA            | 1998-03-13 |
+| YESH DUBEY             | 1998-04-03 |
++------------------------+------------+
+
+3. SELECT * FROM student WHERE percentage >= 80;
++-------+------------------------+------+------------+--------+------+----------+------------+
+| StdID | StdName                | Sex  | Percentage | SClass | Sec  | Stream   | DOB        |
++-------+------------------------+------+------------+--------+------+----------+------------+
+|  1016 | HARSHIT KUMAR          | MALE |      98.00 |     11 | B    | Science  | 2003-05-22 |
+|  1019 | SURYANSH KUMAR AGARWAL | MALE |      85.00 |     11 | C    | Commerce | 2007-08-22 |
+|  1024 | YESH DUBEY             | MALE |      85.00 |     12 | C    | Commerce | 1998-04-03 |
++-------+------------------------+------+------------+--------+------+----------+------------+
+
+4. SELECT StdName, Stream, Percentage from student WHERE percentage > 80;
++------------------------+----------+------------+
+| StdName                | Stream   | Percentage |
++------------------------+----------+------------+
+| HARSHIT KUMAR          | Science  |      98.00 |
+| SURYANSH KUMAR AGARWAL | Commerce |      85.00 |
+| YESH DUBEY             | Commerce |      85.00 |
++------------------------+----------+------------+
+
+5.SELECT * from student WHERE stream = 'Science' AND percentage > 75;
++-------+---------------+--------+------------+--------+------+---------+------------+
+| StdID | StdName       | Sex    | Percentage | SClass | Sec  | Stream  | DOB        |
++-------+---------------+--------+------------+--------+------+---------+------------+
+|  1008 | MITALI GUPTA  | FEMALE |      78.00 |     12 | A    | Science | 1997-11-26 |
+|  1016 | HARSHIT KUMAR | MALE   |      98.00 |     11 | B    | Science | 2003-05-22 |
+|  1023 | YASH SAXENA   | MALE   |      79.00 |     11 | C    | Science | 1998-03-13 |
++-------+---------------+--------+------------+--------+------+---------+------------+
+
+6. DESCRIBE Student;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| StdID      | int          | NO   | PRI | NULL    |       |
+| StdName    | varchar(30)  | NO   |     | NULL    |       |
+| Sex        | varchar(10)  | YES  |     | NULL    |       |
+| Percentage | decimal(5,2) | YES  |     | NULL    |       |
+| SClass     | int          | YES  |     | NULL    |       |
+| Sec        | varchar(1)   | YES  |     | NULL    |       |
+| Stream     | varchar(10)  | YES  |     | NULL    |       |
+| DOB        | date         | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+7. ALTER TABLE Student ADD TeacherID VARCHAR(20);
+ DESC Student;
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| StdID      | int          | NO   | PRI | NULL    |       |
+| StdName    | varchar(30)  | NO   |     | NULL    |       |
+| Sex        | varchar(10)  | YES  |     | NULL    |       |
+| Percentage | decimal(5,2) | YES  |     | NULL    |       |
+| SClass     | int          | YES  |     | NULL    |       |
+| Sec        | varchar(1)   | YES  |     | NULL    |       |
+| Stream     | varchar(10)  | YES  |     | NULL    |       |
+| DOB        | date         | YES  |     | NULL    |       |
+| TeacherID  | varchar(20)  | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+
+8. SELECT * FROM student;
++-------+------------------------+--------+------------+--------+------+----------+------------+-----------+
+| StdID | StdName                | Sex    | Percentage | SClass | Sec  | Stream   | DOB        | TeacherID |
++-------+------------------------+--------+------------+--------+------+----------+------------+-----------+
+|  1001 | AKSHRA AGARWAL         | FEMALE |      70.00 |     11 | A    | Science  | 1996-10-11 | NULL      |
+|  1002 | ANJANI SHARMA          | FEMALE |      75.00 |     11 | A    | Commerce | 1996-09-18 | NULL      |
+|  1003 | ANSHUL SAXENA          | MALE   |      78.00 |     11 | A    | Commerce | 1996-11-19 | NULL      |
+|  1004 | AISHWARYA SINGH        | FEMALE |       NULL |     11 | A    | Commerce | 1996-11-01 | NULL      |
+|  1005 | AKRITI SAXENA          | FEMALE |      76.00 |     11 | A    | Commerce | 1996-09-20 | NULL      |
+|  1006 | KHUSHI AGARWAL         | FEMALE |       NULL |     11 | A    | Commerce | 2003-09-14 | NULL      |
+|  1007 | MAAHI AGARWAL          | FEMALE |       NULL |     11 | A    | Science  | 1997-04-21 | NULL      |
+|  1008 | MITALI GUPTA           | FEMALE |      78.00 |     12 | A    | Science  | 1997-11-26 | NULL      |
+|  1009 | NIKUNJ AGARWAL         | MALE   |      58.00 |     12 | A    | Science  | 1997-07-12 | NULL      |
+|  1010 | PARKHI                 | FEMALE |      59.00 |     12 | A    | Commerce | 1997-12-20 | NULL      |
+|  1011 | PRAKHAR TIWARI         | MALE   |      43.00 |     12 | A    | Science  | 1997-04-22 | NULL      |
+|  1012 | RAGHAV GANGWAR         | MALE   |      58.00 |     12 | A    | Commerce | 1997-12-21 | NULL      |
+|  1013 | SAHIL SARASWAT         | MALE   |      57.00 |     12 | A    | Commerce | 1997-08-13 | NULL      |
+|  1014 | SWATI MISHRA           | FEMALE |       NULL |     11 | A    | Science  | 1996-08-13 | NULL      |
+|  1015 | HARSH AGARWAL          | MALE   |      58.00 |     11 | B    | Science  | 2003-08-28 | NULL      |
+|  1016 | HARSHIT KUMAR          | MALE   |      98.00 |     11 | B    | Science  | 2003-05-22 | NULL      |
+|  1017 | JAHANVI KAPOOR         | FEMALE |      65.00 |     11 | B    | Science  | 1997-01-10 | NULL      |
+|  1018 | STUTI MISHRA           | FEMALE |      66.00 |     11 | C    | Commerce | 1996-01-10 | NULL      |
+|  1019 | SURYANSH KUMAR AGARWAL | MALE   |      85.00 |     11 | C    | Commerce | 2007-08-22 | NULL      |
+|  1020 | TANI RASTOGI           | FEMALE |      75.00 |     12 | C    | Commerce | 1998-01-15 | NULL      |
+|  1021 | TANISHK GUPTA          | MALE   |      55.00 |     12 | C    | Science  | 1998-04-11 | NULL      |
+|  1022 | TANMAY AGARWAL         | MALE   |      57.00 |     11 | C    | Commerce | 1998-06-28 | NULL      |
+|  1023 | YASH SAXENA            | MALE   |      79.00 |     11 | C    | Science  | 1998-03-13 | NULL      |
+|  1024 | YESH DUBEY             | MALE   |      85.00 |     12 | C    | Commerce | 1998-04-03 | NULL      |
++-------+------------------------+--------+------------+--------+------+----------+------------+-----------+
+
+9.ALTER TABLE Student MODIFY TeacherID INTEGER ;  
+DESC Student; 
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| StdID      | int          | NO   | PRI | NULL    |       |
+| StdName    | varchar(30)  | NO   |     | NULL    |       |
+| Sex        | varchar(10)  | YES  |     | NULL    |       |
+| Percentage | decimal(5,2) | YES  |     | NULL    |       |
+| SClass     | int          | YES  |     | NULL    |       |
+| Sec        | varchar(1)   | YES  |     | NULL    |       |
+| Stream     | varchar(10)  | YES  |     | NULL    |       |
+| DOB        | date         | YES  |     | NULL    |       |
+| TeacherID  | int          | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+SELECT * FROM student; 
++-------+------------------------+--------+------------+--------+------+----------+------------+-----------+
+| StdID | StdName                | Sex    | Percentage | SClass | Sec  | Stream   | DOB        | TeacherID |
++-------+------------------------+--------+------------+--------+------+----------+------------+-----------+
+|  1001 | AKSHRA AGARWAL         | FEMALE |      70.00 |     11 | A    | Science  | 1996-10-11 |      NULL |
+|  1002 | ANJANI SHARMA          | FEMALE |      75.00 |     11 | A    | Commerce | 1996-09-18 |      NULL |
+|  1003 | ANSHUL SAXENA          | MALE   |      78.00 |     11 | A    | Commerce | 1996-11-19 |      NULL |
+|  1004 | AISHWARYA SINGH        | FEMALE |       NULL |     11 | A    | Commerce | 1996-11-01 |      NULL |
+|  1005 | AKRITI SAXENA          | FEMALE |      76.00 |     11 | A    | Commerce | 1996-09-20 |      NULL |
+|  1006 | KHUSHI AGARWAL         | FEMALE |       NULL |     11 | A    | Commerce | 2003-09-14 |      NULL |
+|  1007 | MAAHI AGARWAL          | FEMALE |       NULL |     11 | A    | Science  | 1997-04-21 |      NULL |
+|  1008 | MITALI GUPTA           | FEMALE |      78.00 |     12 | A    | Science  | 1997-11-26 |      NULL |
+|  1009 | NIKUNJ AGARWAL         | MALE   |      58.00 |     12 | A    | Science  | 1997-07-12 |      NULL |
+|  1010 | PARKHI                 | FEMALE |      59.00 |     12 | A    | Commerce | 1997-12-20 |      NULL |
+|  1011 | PRAKHAR TIWARI         | MALE   |      43.00 |     12 | A    | Science  | 1997-04-22 |      NULL |
+|  1012 | RAGHAV GANGWAR         | MALE   |      58.00 |     12 | A    | Commerce | 1997-12-21 |      NULL |
+|  1013 | SAHIL SARASWAT         | MALE   |      57.00 |     12 | A    | Commerce | 1997-08-13 |      NULL |
+|  1014 | SWATI MISHRA           | FEMALE |       NULL |     11 | A    | Science  | 1996-08-13 |      NULL |
+|  1015 | HARSH AGARWAL          | MALE   |      58.00 |     11 | B    | Science  | 2003-08-28 |      NULL |
+|  1016 | HARSHIT KUMAR          | MALE   |      98.00 |     11 | B    | Science  | 2003-05-22 |      NULL |
+|  1017 | JAHANVI KAPOOR         | FEMALE |      65.00 |     11 | B    | Science  | 1997-01-10 |      NULL |
+|  1018 | STUTI MISHRA           | FEMALE |      66.00 |     11 | C    | Commerce | 1996-01-10 |      NULL |
+|  1019 | SURYANSH KUMAR AGARWAL | MALE   |      85.00 |     11 | C    | Commerce | 2007-08-22 |      NULL |
+|  1020 | TANI RASTOGI           | FEMALE |      75.00 |     12 | C    | Commerce | 1998-01-15 |      NULL |
+|  1021 | TANISHK GUPTA          | MALE   |      55.00 |     12 | C    | Science  | 1998-04-11 |      NULL |
+|  1022 | TANMAY AGARWAL         | MALE   |      57.00 |     11 | C    | Commerce | 1998-06-28 |      NULL |
+|  1023 | YASH SAXENA            | MALE   |      79.00 |     11 | C    | Science  | 1998-03-13 |      NULL |
+|  1024 | YESH DUBEY             | MALE   |      85.00 |     12 | C    | Commerce | 1998-04-03 |      NULL |
++-------+------------------------+--------+------------+--------+------+----------+------------+-----------+
+
+10. SELECT stdname, percentage - 5 FROM Student;
++------------------------+----------------+
+| stdname                | percentage - 5 |
++------------------------+----------------+
+| AKSHRA AGARWAL         |          65.00 |
+| ANJANI SHARMA          |          70.00 |
+| ANSHUL SAXENA          |          73.00 |
+| AISHWARYA SINGH        |           NULL |
+| AKRITI SAXENA          |          71.00 |
+| KHUSHI AGARWAL         |           NULL |
+| MAAHI AGARWAL          |           NULL |
+| MITALI GUPTA           |          73.00 |
+| NIKUNJ AGARWAL         |          53.00 |
+| PARKHI                 |          54.00 |
+| PRAKHAR TIWARI         |          38.00 |
+| RAGHAV GANGWAR         |          53.00 |
+| SAHIL SARASWAT         |          52.00 |
+| SWATI MISHRA           |           NULL |
+| HARSH AGARWAL          |          53.00 |
+| HARSHIT KUMAR          |          93.00 |
+| JAHANVI KAPOOR         |          60.00 |
+| STUTI MISHRA           |          61.00 |
+| SURYANSH KUMAR AGARWAL |          80.00 |
+| TANI RASTOGI           |          70.00 |
+| TANISHK GUPTA          |          50.00 |
+| TANMAY AGARWAL         |          52.00 |
+| YASH SAXENA            |          74.00 |
+| YESH DUBEY             |          80.00 |
++------------------------+----------------+
+
+11.SELECT StdName AS "Student Name",DOB As “Date of Birth” FROM Student;
+
++------------------------+---------------+
+| Student Name           | Date of Birth |
++------------------------+---------------+
+| AKSHRA AGARWAL         | 1996-10-11    |
+| ANJANI SHARMA          | 1996-09-18    |
+| ANSHUL SAXENA          | 1996-11-19    |
+| AISHWARYA SINGH        | 1996-11-01    |
+| AKRITI SAXENA          | 1996-09-20    |
+| KHUSHI AGARWAL         | 2003-09-14    |
+| MAAHI AGARWAL          | 1997-04-21    |
+| MITALI GUPTA           | 1997-11-26    |
+| NIKUNJ AGARWAL         | 1997-07-12    |
+| PARKHI                 | 1997-12-20    |
+| PRAKHAR TIWARI         | 1997-04-22    |
+| RAGHAV GANGWAR         | 1997-12-21    |
+| SAHIL SARASWAT         | 1997-08-13    |
+| SWATI MISHRA           | 1996-08-13    |
+| HARSH AGARWAL          | 2003-08-28    |
+| HARSHIT KUMAR          | 2003-05-22    |
+| JAHANVI KAPOOR         | 1997-01-10    |
+| STUTI MISHRA           | 1996-01-10    |
+| SURYANSH KUMAR AGARWAL | 2007-08-22    |
+| TANI RASTOGI           | 1998-01-15    |
+| TANISHK GUPTA          | 1998-04-11    |
+| TANMAY AGARWAL         | 1998-06-28    |
+| YASH SAXENA            | 1998-03-13    |
+| YESH DUBEY             | 1998-04-03    |
++------------------------+---------------+
+ 
+ 12.select StdName from student where Stream<>'Science';
+ +------------------------+
+| StdName                |
++------------------------+
+| ANJANI SHARMA          |
+| ANSHUL SAXENA          |
+| AISHWARYA SINGH        |
+| AKRITI SAXENA          |
+| KHUSHI AGARWAL         |
+| PARKHI                 |
+| RAGHAV GANGWAR         |
+| SAHIL SARASWAT         |
+| STUTI MISHRA           |
+| SURYANSH KUMAR AGARWAL |
+| TANI RASTOGI           |
+| TANMAY AGARWAL         |
+| YESH DUBEY             |
++------------------------+
+
+13.SELECT StdName,percentage from student where percentage>=60 AND percentage<=80;
++----------------+------------+
+| StdName        | percentage |
++----------------+------------+
+| AKSHRA AGARWAL |      70.00 |
+| ANJANI SHARMA  |      75.00 |
+| ANSHUL SAXENA  |      78.00 |
+| AKRITI SAXENA  |      76.00 |
+| MITALI GUPTA   |      78.00 |
+| JAHANVI KAPOOR |      65.00 |
+| STUTI MISHRA   |      66.00 |
+| TANI RASTOGI   |      75.00 |
+| YASH SAXENA    |      79.00 |
++----------------+------------+
+
+14.update Student set StdName = 'SWATI VERMA', percentage = 86 where StdId = 1014;
++-------+------------------------+--------+------------+--------+------+----------+------------+
+| StdID | StdName                | Sex    | Percentage | SClass | Sec  | Stream   | DOB        |
++-------+------------------------+--------+------------+--------+------+----------+------------+
+|  1001 | AKSHRA AGARWAL         | FEMALE |      70.00 |     11 | A    | Science  | 1996-10-11 |
+|  1002 | ANJANI SHARMA          | FEMALE |      75.00 |     11 | A    | Commerce | 1996-09-18 |
+|  1003 | ANSHUL SAXENA          | MALE   |      78.00 |     11 | A    | Commerce | 1996-11-19 |
+|  1004 | AISHWARYA SINGH        | FEMALE |       NULL |     11 | A    | Commerce | 1996-11-01 |
+|  1005 | AKRITI SAXENA          | FEMALE |      76.00 |     11 | A    | Commerce | 1996-09-20 |
+|  1006 | KHUSHI AGARWAL         | FEMALE |       NULL |     11 | A    | Commerce | 2003-09-14 |
+|  1007 | MAAHI AGARWAL          | FEMALE |       NULL |     11 | A    | Science  | 1997-04-21 |
+|  1008 | MITALI GUPTA           | FEMALE |      78.00 |     12 | A    | Science  | 1997-11-26 |
+|  1009 | NIKUNJ AGARWAL         | MALE   |      58.00 |     12 | A    | Science  | 1997-07-12 |
+|  1010 | PARKHI                 | FEMALE |      59.00 |     12 | A    | Commerce | 1997-12-20 |
+|  1011 | PRAKHAR TIWARI         | MALE   |      43.00 |     12 | A    | Science  | 1997-04-22 |
+|  1012 | RAGHAV GANGWAR         | MALE   |      58.00 |     12 | A    | Commerce | 1997-12-21 |
+|  1013 | SAHIL SARASWAT         | MALE   |      57.00 |     12 | A    | Commerce | 1997-08-13 |
+|  1014 | SWATI VERMA            | FEMALE |      86.00 |     11 | A    | Science  | 1996-08-13 |
+|  1015 | HARSH AGARWAL          | MALE   |      58.00 |     11 | B    | Science  | 2003-08-28 |
+|  1016 | HARSHIT KUMAR          | MALE   |      98.00 |     11 | B    | Science  | 2003-05-22 |
+|  1017 | JAHANVI KAPOOR         | FEMALE |      65.00 |     11 | B    | Science  | 1997-01-10 |
+|  1018 | STUTI MISHRA           | FEMALE |      66.00 |     11 | C    | Commerce | 1996-01-10 |
+|  1019 | SURYANSH KUMAR AGARWAL | MALE   |      85.00 |     11 | C    | Commerce | 2007-08-22 |
+|  1020 | TANI RASTOGI           | FEMALE |      75.00 |     12 | C    | Commerce | 1998-01-15 |
+|  1021 | TANISHK GUPTA          | MALE   |      55.00 |     12 | C    | Science  | 1998-04-11 |
+|  1022 | TANMAY AGARWAL         | MALE   |      57.00 |     11 | C    | Commerce | 1998-06-28 |
+|  1023 | YASH SAXENA            | MALE   |      79.00 |     11 | C    | Science  | 1998-03-13 |
+|  1024 | YESH DUBEY             | MALE   |      85.00 |     12 | C    | Commerce | 1998-04-03 |
++-------+------------------------+--------+------------+--------+------+----------+------------+
+
+15.DELETE FROM Student WHERE StdID = 1016;
++-------+------------------------+--------+------------+--------+------+----------+------------+
+| StdID | StdName                | Sex    | Percentage | SClass | Sec  | Stream   | DOB        |
++-------+------------------------+--------+------------+--------+------+----------+------------+
+|  1001 | AKSHRA AGARWAL         | FEMALE |      70.00 |     11 | A    | Science  | 1996-10-11 |
+|  1002 | ANJANI SHARMA          | FEMALE |      75.00 |     11 | A    | Commerce | 1996-09-18 |
+|  1003 | ANSHUL SAXENA          | MALE   |      78.00 |     11 | A    | Commerce | 1996-11-19 |
+|  1004 | AISHWARYA SINGH        | FEMALE |       NULL |     11 | A    | Commerce | 1996-11-01 |
+|  1005 | AKRITI SAXENA          | FEMALE |      76.00 |     11 | A    | Commerce | 1996-09-20 |
+|  1006 | KHUSHI AGARWAL         | FEMALE |       NULL |     11 | A    | Commerce | 2003-09-14 |
+|  1007 | MAAHI AGARWAL          | FEMALE |       NULL |     11 | A    | Science  | 1997-04-21 |
+|  1008 | MITALI GUPTA           | FEMALE |      78.00 |     12 | A    | Science  | 1997-11-26 |
+|  1009 | NIKUNJ AGARWAL         | MALE   |      58.00 |     12 | A    | Science  | 1997-07-12 |
+|  1010 | PARKHI                 | FEMALE |      59.00 |     12 | A    | Commerce | 1997-12-20 |
+|  1011 | PRAKHAR TIWARI         | MALE   |      43.00 |     12 | A    | Science  | 1997-04-22 |
+|  1012 | RAGHAV GANGWAR         | MALE   |      58.00 |     12 | A    | Commerce | 1997-12-21 |
+|  1013 | SAHIL SARASWAT         | MALE   |      57.00 |     12 | A    | Commerce | 1997-08-13 |
+|  1014 | SWATI VERMA            | FEMALE |      86.00 |     11 | A    | Science  | 1996-08-13 |
+|  1015 | HARSH AGARWAL          | MALE   |      58.00 |     11 | B    | Science  | 2003-08-28 |
+|  1017 | JAHANVI KAPOOR         | FEMALE |      65.00 |     11 | B    | Science  | 1997-01-10 |
+|  1018 | STUTI MISHRA           | FEMALE |      66.00 |     11 | C    | Commerce | 1996-01-10 |
+|  1019 | SURYANSH KUMAR AGARWAL | MALE   |      85.00 |     11 | C    | Commerce | 2007-08-22 |
+|  1020 | TANI RASTOGI           | FEMALE |      75.00 |     12 | C    | Commerce | 1998-01-15 |
+|  1021 | TANISHK GUPTA          | MALE   |      55.00 |     12 | C    | Science  | 1998-04-11 |
+|  1022 | TANMAY AGARWAL         | MALE   |      57.00 |     11 | C    | Commerce | 1998-06-28 |
+|  1023 | YASH SAXENA            | MALE   |      79.00 |     11 | C    | Science  | 1998-03-13 |
+|  1024 | YESH DUBEY             | MALE   |      85.00 |     12 | C    | Commerce | 1998-04-03 |
++-------+------------------------+--------+------------+--------+------+----------+------------+
+
+16.SELECT * FROM Student WHERE StdName LIKE 'G_' ;
+Empty set (0.02 sec)
+
+17.
+mysql> SELECT * FROM Student WHERE StdName LIKE 'G%' ;
+Empty set (0.00 sec)
+
+18. SELECT * FROM Student WHERE StdName='G';
+Empty set (0.00 sec)
+
+ 19.SELECT * FROM Student WHERE StdName LIKE '%G%';
++-------+------------------------+--------+------------+--------+------+----------+------------+
+| StdID | StdName                | Sex    | Percentage | SClass | Sec  | Stream   | DOB        |
++-------+------------------------+--------+------------+--------+------+----------+------------+
+|  1001 | AKSHRA AGARWAL         | FEMALE |      70.00 |     11 | A    | Science  | 1996-10-11 |
+|  1004 | AISHWARYA SINGH        | FEMALE |       NULL |     11 | A    | Commerce | 1996-11-01 |
+|  1006 | KHUSHI AGARWAL         | FEMALE |       NULL |     11 | A    | Commerce | 2003-09-14 |
+|  1007 | MAAHI AGARWAL          | FEMALE |       NULL |     11 | A    | Science  | 1997-04-21 |
+|  1008 | MITALI GUPTA           | FEMALE |      78.00 |     12 | A    | Science  | 1997-11-26 |
+|  1009 | NIKUNJ AGARWAL         | MALE   |      58.00 |     12 | A    | Science  | 1997-07-12 |
+|  1012 | RAGHAV GANGWAR         | MALE   |      58.00 |     12 | A    | Commerce | 1997-12-21 |
+|  1015 | HARSH AGARWAL          | MALE   |      58.00 |     11 | B    | Science  | 2003-08-28 |
+|  1019 | SURYANSH KUMAR AGARWAL | MALE   |      85.00 |     11 | C    | Commerce | 2007-08-22 |
+|  1020 | TANI RASTOGI           | FEMALE |      75.00 |     12 | C    | Commerce | 1998-01-15 |
+|  1021 | TANISHK GUPTA          | MALE   |      55.00 |     12 | C    | Science  | 1998-04-11 |
+|  1022 | TANMAY AGARWAL         | MALE   |      57.00 |     11 | C    | Commerce | 1998-06-28 |
++-------+------------------------+--------+------------+--------+------+----------+------------+
+20.SELECT DISTINCT Stream FROM Student;
++----------+
+| Stream   |
++----------+
+| Science  |
+| Commerce |
++----------+
+
+21.select StdName, Sex, Stream from Student where percentage between 70 AND 80;
++----------------+--------+----------+
+| StdName        | Sex    | Stream   |
++----------------+--------+----------+
+| AKSHRA AGARWAL | FEMALE | Science  |
+| ANJANI SHARMA  | FEMALE | Commerce |
+| ANSHUL SAXENA  | MALE   | Commerce |
+| AKRITI SAXENA  | FEMALE | Commerce |
+| MITALI GUPTA   | FEMALE | Science  |
+| TANI RASTOGI   | FEMALE | Commerce |
+| YASH SAXENA    | MALE   | Science  |
++----------------+--------+----------+
+
+
+Task
+CREATE TABLE Emp1 (
+    empno INT PRIMARY KEY,
+    ename VARCHAR(50),
+    job VARCHAR(50),
+    mgr INT,
+    hiredate DATE,
+    sal DECIMAL(10, 2),
+    comm DECIMAL(10, 2),
+    deptno INT);
+
+INSERT INTO Emp1 VALUES (8369, 'SMITH', 'CLERK', 8902, '1990-12-18', 800.00, NULL, 20);
+INSERT INTO Emp1 VALUES (8499, 'ANYA', 'SALESMAN', 8698, '1991-02-20', 1600.00, 300.00, 30);
+INSERT INTO Emp1 VALUES (8521, 'SETH', 'SALESMAN', 8698, '1991-02-22', 1250.00, 500.00, 30);
+INSERT INTO Emp1 VALUES (8566, 'MAHADEVAN', 'MANAGER', 8839, '1991-04-02', 2985.00, NULL, 20);
+INSERT INTO Emp1 VALUES (8654, 'MOMIN', 'SALESMAN', 8698, '1991-09-28', 1250.00, 1400.00, 30);
+INSERT INTO Emp1 VALUES (8698, 'BINA', 'MANAGER', 8839, '1991-05-01', 2850.00, NULL, 30);
+INSERT INTO Emp1 VALUES (8839, 'SHIVANSH', 'MANAGER', 8839, '1991-06-09', 2450.00, NULL, 10);
+INSERT INTO Emp1 VALUES (8882, 'SCOTT', 'ANALYST', 8566, '1992-12-09', 3000.00, NULL, 20);
+INSERT INTO Emp1 VALUES (8888, 'AMIR', 'PRESIDENT', NULL, '1991-11-18', 5000.00, NULL, 10);
+INSERT INTO Emp1 VALUES (8844, 'KULDEEP', 'SALESMAN', 8698, '1991-09-08', 1500.00, 0.00, 30);
+
+ select * from Emp1;
++-------+-----------+-----------+------+------------+---------+---------+--------+
+| empno | ename     | job       | mgr  | hiredate   | sal     | comm    | deptno |
++-------+-----------+-----------+------+------------+---------+---------+--------+
+|  8369 | SMITH     | CLERK     | 8902 | 1990-12-18 |  800.00 |    NULL |     20 |
+|  8499 | ANYA      | SALESMAN  | 8698 | 1991-02-20 | 1600.00 |  300.00 |     30 |
+|  8521 | SETH      | SALESMAN  | 8698 | 1991-02-22 | 1250.00 |  500.00 |     30 |
+|  8566 | MAHADEVAN | MANAGER   | 8839 | 1991-04-02 | 2985.00 |    NULL |     20 |
+|  8654 | MOMIN     | SALESMAN  | 8698 | 1991-09-28 | 1250.00 | 1400.00 |     30 |
+|  8698 | BINA      | MANAGER   | 8839 | 1991-05-01 | 2850.00 |    NULL |     30 |
+|  8839 | SHIVANSH  | MANAGER   | 8839 | 1991-06-09 | 2450.00 |    NULL |     10 |
+|  8844 | KULDEEP   | SALESMAN  | 8698 | 1991-09-08 | 1500.00 |    0.00 |     30 |
+|  8882 | SCOTT     | ANALYST   | 8566 | 1992-12-09 | 3000.00 |    NULL |     20 |
+|  8888 | AMIR      | PRESIDENT | NULL | 1991-11-18 | 5000.00 |    NULL |     10 |
++-------+-----------+-----------+------+------------+---------+---------+--------+
+
+------------------------------------------------------------------------------------------------------------------------------------
+Task-4
+
+1.select ename, sal from Emp1 where sal >= 2200;
++-----------+---------+
+| ename     | sal     |
++-----------+---------+
+| MAHADEVAN | 2985.00 |
+| BINA      | 2850.00 |
+| SHIVANSH  | 2450.00 |
+| SCOTT     | 3000.00 |
+| AMIR      | 5000.00 |
++-----------+---------+
+
+2.select * from Emp1 where comm IS null;
++-------+-----------+-----------+------+------------+---------+------+--------+
+| empno | ename     | job       | mgr  | hiredate   | sal     | comm | deptno |
++-------+-----------+-----------+------+------------+---------+------+--------+
+|  8369 | SMITH     | CLERK     | 8902 | 1990-12-18 |  800.00 | NULL |     20 |
+|  8566 | MAHADEVAN | MANAGER   | 8839 | 1991-04-02 | 2985.00 | NULL |     20 |
+|  8698 | BINA      | MANAGER   | 8839 | 1991-05-01 | 2850.00 | NULL |     30 |
+|  8839 | SHIVANSH  | MANAGER   | 8839 | 1991-06-09 | 2450.00 | NULL |     10 |
+|  8882 | SCOTT     | ANALYST   | 8566 | 1992-12-09 | 3000.00 | NULL |     20 |
+|  8888 | AMIR      | PRESIDENT | NULL | 1991-11-18 | 5000.00 | NULL |     10 |
++-------+-----------+-----------+------+------------+---------+------+--------+
+
+3.select ename, sal from Emp1 where sal not between 2500 and 4000;
+
++----------+---------+
+| ename    | sal     |
++----------+---------+
+| SMITH    |  800.00 |
+| ANYA     | 1600.00 |
+| SETH     | 1250.00 |
+| MOMIN    | 1250.00 |
+| SHIVANSH | 2450.00 |
+| KULDEEP  | 1500.00 |
+| AMIR     | 5000.00 |
++----------+---------+
+
+4.select ename, job, sal from Emp1 where mgr is null;
++-------+-----------+---------+
+| ename | job       | sal     |
++-------+-----------+---------+
+| AMIR  | PRESIDENT | 5000.00 |
++-------+-----------+---------+
+
+5.select ename from Emp1 where ename like '__A%';
+Empty set (0.00 sec)
+
+
+6. select ename from Emp1 where ename like '%T';
++-------+
+| ename |
++-------+
+| SCOTT |
++-------+
+
+7.select ename from Emp1 where ename like 'M_L%';
+Empty set (0.00 sec)
+
+8.select empno, ename, job, mgr, hiredate, sal,case 
+when comm is null then 'Not given' 
+else comm 
+end as comm, 
+deptno
+from Emp1;
++-------+-----------+-----------+------+------------+---------+-----------+--------+
+| empno | ename     | job       | mgr  | hiredate   | sal     | comm      | deptno |
++-------+-----------+-----------+------+------------+---------+-----------+--------+
+|  8369 | SMITH     | CLERK     | 8902 | 1990-12-18 |  800.00 | Not given |     20 |
+|  8499 | ANYA      | SALESMAN  | 8698 | 1991-02-20 | 1600.00 | 300.00    |     30 |
+|  8521 | SETH      | SALESMAN  | 8698 | 1991-02-22 | 1250.00 | 500.00    |     30 |
+|  8566 | MAHADEVAN | MANAGER   | 8839 | 1991-04-02 | 2985.00 | Not given |     20 |
+|  8654 | MOMIN     | SALESMAN  | 8698 | 1991-09-28 | 1250.00 | 1400.00   |     30 |
+|  8698 | BINA      | MANAGER   | 8839 | 1991-05-01 | 2850.00 | Not given |     30 |
+|  8839 | SHIVANSH  | MANAGER   | 8839 | 1991-06-09 | 2450.00 | Not given |     10 |
+|  8844 | KULDEEP   | SALESMAN  | 8698 | 1991-09-08 | 1500.00 | 0.00      |     30 |
+|  8882 | SCOTT     | ANALYST   | 8566 | 1992-12-09 | 3000.00 | Not given |     20 |
+|  8888 | AMIR      | PRESIDENT | NULL | 1991-11-18 | 5000.00 | Not given |     10 |
++-------+-----------+-----------+------+------------+---------+-----------+--------+
+  

@@ -1,0 +1,114 @@
+Task1:
+
+1.Write a SQL statement to create a simple table movies which should include columns movie_id, movie_name, movie_type and
+movie_rating only if it does not exist.The combination of movie_id and movie_name should be an unique indentifier of the table.
+
+create table movies(
+    movie_id int not null unique,
+    movie_name varchar (255) not null unique,
+    movie_type  varchar (255),
+    movie_rating int,
+    due_date Date
+    );
+
+2.Write a SQL statement to create a table company which should include columns company_id, trade, number_of_employees. 
+The company_id should be an unique indentifier of the table.trade and number_of_employees columns should not be null. 
+The number_of_employees should be 0 by default.
+
+create table company(
+    company_id int primary key,
+    trade varchar (255),
+    number_of_employees int not null Default 0
+    );
+
+3.Write a SQL statement to create a table job_offer which should include columns offer_id, 
+offer_title, offer_min_salary and offer_max_salary, company_id, and make sure that, the default value for job_offer_title 
+is blank, offer_min_salary is 5000 and offer_max_salary is null. The offer_id column should be unique.
+The foreign key company_id can contain only those values which exist in the company table.
+
+create table Jobs_offer(
+    offer_id int unique,
+    offer_title varchar (255),
+	offer_min_salary int Default 5000,
+	offer_max_salary int,
+	company_id int,
+	FOREIGN key (company_id) REFERENCES company(company_id)
+    );
+
+Alter
+4.Write a SQL statement to rename the movies table to movies_renamed
+
+RENAME table movies to movies_renamed
+
+5.Write a SQL statement to add a column movie_director to the movies_renamed table.
+
+alter table movies_renamed
+add movie_director varchar(300);
+
+6.Write a SQL statement to add a column ID as a first column of the movies_renamed table.
+
+alter table movies_renamed
+add ID int first;
+
+
+7.Write a SQL statement to add a column movie_description after the movie_name column in movies_renamed table.
+
+alter table movies_renamed
+add movie_description varchar(500) after movie_name;
+
+8.Write a SQL statement to change the data type of the column movie_rating to integer.
+
+alter table movies_renamed
+Modify movie_rating int;
+
+9.Write a SQL statement to drop the movie_director column.
+
+alter table movies_renamed
+drop movie_director;
+
+10.Write a SQL statement to drop the existing primary key from the movies_renamed table.
+
+alter table movies_renamed
+drop PRIMARY key;
+
+11.Write a SQL statement to add primary key for the column movie_id in the movies_renamed table.
+
+alter table movies_renamed
+ADD PRIMARY KEY (movie_id);
+
+
+
+mysql> create table Taskss(
+    
+    task_id int auto_increment primary key,
+    title varchar(255) not null,
+    start_date Date,
+    due_date Date,
+	priority tinyint not null default 3,
+	description text
+    
+     );
+
+	insert into Taskss(title,priority) values
+	('Learn Mysql Insert Statement',1);
+
+	insert into Taskss values (2,'Insert Statement Without Column ','2024-06-01','2024-06-01',2,'Hi my name sureshmanikandan'); 
+	
+	insert into Taskss(title,start_date,due_date) values
+	('Third Title',current_date(),current_date + 1);
+ 
+
+	Delete from Taskss
+	where task_id=3;
+
+	insert into Taskss values (3,'Insert using current date',current_date(),current_date + 1,4,'sureshmanikandan');
+	Delete from Taskss
+	where priority=3;
+insert into Taskss(title,start_date,due_date,description) values
+	('Third Title',current_date(),current_date + 1,'SureshKumaravel');
+	
+	insert into Taskss(title,priority) values
+	('Prestudy',1),
+	('do Prestudy',1),
+('must Prestudy',2),
+(' be Prestudy',3);

@@ -1,0 +1,244 @@
+Task-2
+
+1.Get department,total salary with respect to a department from employee table.
+select department_id,sum(salary) as TotalSalary from employee group by department_id ;
++---------------+-------------+
+| department_id | TotalSalary |
++---------------+-------------+
+|            20 |       41000 |
+|            30 |       30800 |
+|            40 |       16900 |
+|            50 |       34100 |
+|            60 |       22400 |
+|            70 |        2900 |
+|            80 |        8900 |
+|            90 |        2400 |
+|           100 |       12000 |
+|           110 |        2800 |
+|           130 |        2500 |
+|           140 |        6900 |
+|           150 |        7800 |
+|           160 |        7700 |
+|           170 |       17200 |
++---------------+-------------+
+
+2. Get department,total salary with respect to a department from employee table order by total salary descending
+
+select department_id,sum(salary) as TotalSalary from employee group by department_id order by salary desc;
+
+ select department_id,sum(salary) as TotalSalary from employee group by department_id order by sum(salary) desc;
++---------------+-------------+
+| department_id | TotalSalary |
++---------------+-------------+
+|            20 |       41000 |
+|            50 |       34100 |
+|            30 |       30800 |
+|            60 |       22400 |
+|           170 |       17200 |
+|            40 |       16900 |
+|           100 |       12000 |
+|            80 |        8900 |
+|           150 |        7800 |
+|           160 |        7700 |
+|           140 |        6900 |
+|            70 |        2900 |
+|           110 |        2800 |
+|           130 |        2500 |
+|            90 |        2400 |
++---------------+-------------+
+
+3. Get department wise maximum salary from employee table order by salary ascending
+
+select department_id,max(salary)MaxSalary from employee group by department_id order by max(salary) desc;
+
++---------------+-----------+
+| department_id | MaxSalary |
++---------------+-----------+
+|            20 |     24000 |
+|            30 |     17000 |
+|            40 |      7900 |
+|            50 |      8200 |
+|            60 |      9000 |
+|            70 |      2900 |
+|            80 |      5800 |
+|            90 |      2400 |
+|           100 |     12000 |
+|           110 |      2800 |
+|           130 |      2500 |
+|           140 |      6900 |
+|           150 |      7800 |
+|           160 |      7700 |
+|           170 |      9000 |
++---------------+-----------+
+
+4. Get department wise minimum salary from employee table order by salary ascending
+
+select department_id,min(salary)MinSalary from employee group by department_id order by min(salary) desc;
++---------------+-----------+
+| department_id | MinSalary |
++---------------+-----------+
+|            20 |     17000 |
+|           100 |     12000 |
+|           170 |      8200 |
+|           150 |      7800 |
+|           160 |      7700 |
+|           140 |      6900 |
+|            40 |      4200 |
+|            80 |      3100 |
+|            70 |      2900 |
+|            30 |      2800 |
+|           110 |      2800 |
+|            60 |      2600 |
+|           130 |      2500 |
+|            90 |      2400 |
+|            50 |      2200 |
++---------------+-----------+
+
+
+5. Select department,total salary with respect to a department from employee table where total salary greater
+
+select department_id,salary from employee group by department_id,salary order by salary desc limit 1;
+
++---------------+--------+
+| department_id | salary |
++---------------+--------+
+|            20 |  24000 |
++---------------+--------+
+
+6. Select employees first name, last name, job_id and salary whose first name starts with alphabet S
+
+select first_name,last_name,job_id from employee where first_name like 's%';
++------------+-----------+----------+
+| first_name | last_name | job_id   |
++------------+-----------+----------+
+| Steven     | King      | AD_PRES  |
+| Shelli     | Baida     | PU_CLERK |
+| Sigal      | Tobias    | PU_CLERK |
+| Shanta     | Vollman   | ST_MAN   |
+| Steven     | Markle    | ST_CLERK |
++------------+-----------+----------+
+
+7. Write a query to select employee with the highest salary
+select concat(first_name,last_name) Employee_Name,salary from employee order by salary desc limit 1;
+
++---------------+--------+
+| Employee_Name | salary |
++---------------+--------+
+| StevenKing    |  24000 |
++---------------+--------+
+
+8. Select employee with the second highest salary
+select concat(first_name,last_name) Employee_Name,salary from employee order by salary desc limit 1,1;
+
+| Employee_Name | salary |
++---------------+--------+
+| NeenaKochhar  |  17000 |
++---------------+--------+
+
+
+9. Get the count of employees hired year wise
+select count(*),year(hire_date) from employee group by year(hire_date);
+
+| count(*) | year(hire_date) |
++----------+-----------------+
+|        1 |            1987 |
+|        1 |            1989 |
+|        1 |            1993 |
+|        1 |            1990 |
+|        1 |            1991 |
+|       10 |            1997 |
+|        4 |            1998 |
+|        5 |            1999 |
+|        3 |            1994 |
+|        2 |            1995 |
+|        1 |            1996 |
+|        1 |            2000 |
++----------+-----------------+
+
+10. Select the employees whose first_name contains “an”
+
+select first_name,last_name,job_id from employee where first_name like '%an%';
+
++-------------+-----------+------------+
+| first_name  | last_name | job_id     |
++-------------+-----------+------------+
+| Alexander   | Hunold    | IT_PROG    |
+| Diana       | Lorentz   | IT_PROG    |
+| Nancy       | Greenberg | FI_Emp1     |
+| Daniel      | Faviet    | FI_ACCOUNT |
+| Jose Manuel | Urman     | FI_ACCOUNT |
+| Alexander   | Khoo      | PU_CLERK   |
+| Shanta      | Vollman   | ST_MAN     |
++-------------+-----------+------------+
+
+11. Find the employees who joined in August, 1994.
+
+select concat(first_name,last_name) Employee_Name from employee where hire_date between '1994-08-01' and '1994-08-31';
+
++----------------+
+| Employee_Name  |
++----------------+
+| NancyGreenberg |
+| DanielFaviet   |
++----------------+
+
+12. Write a SQL query to display the 5 least earning employees
+
+select department_id,min(salary)MinSalary from employee group by department_id order by min(salary) limit 5;
+
++---------------+-----------+
+| department_id | MinSalary |
++---------------+-----------+
+|            50 |      2200 |
+|            90 |      2400 |
+|           130 |      2500 |
+|            60 |      2600 |
+|           110 |      2800 |
++---------------+-----------+
+
+13. Find the employees hired in the 80s
+
+select concat(first_name,last_name) Employee_Name,year(hire_date) from employee where year(hire_date) between 1980 and 1989;
+
++---------------+-----------------+
+| Employee_Name | year(hire_date) |
++---------------+-----------------+
+| StevenKing    |            1987 |
+| NeenaKochhar  |            1989 |
++---------------+-----------------+
+
+14. Find the employees who joined the company after 15th of the month
+
+select concat(first_name,last_name) Employee_Name,hire_date from employee where day(hire_date) > 15;
+
++-----------------+------------+
+| Employee_Name   | hire_date  |
++-----------------+------------+
+| StevenKing      | 1987-06-17 |
+| NeenaKochhar    | 1989-11-21 |
+| AlexanderHunold | 1990-09-30 |
+| BruceErnst      | 1991-05-21 |
+| DavidAustin     | 1997-06-25 |
+| NancyGreenberg  | 1994-08-17 |
+| MatthewWeiss    | 1996-07-18 |
++-----------------+------------+
+
+15. find the count of employees who not received the commission
+
+select count(*)from employee where commission_pct is null;
+
++----------+
+| count(*) |
++----------+
+|       31 |
++----------+
+
+
+16. Calculate the total salary inclusive of commission for all the employees
+
+select sum(salary+ifnull(commission_pct,0)) as Total_salary from employee;
++--------------+
+| Total_salary |
++--------------+
+|       216300 |
++--------------+
